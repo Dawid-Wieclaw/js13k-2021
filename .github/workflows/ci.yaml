@@ -19,3 +19,6 @@ jobs:
         
       - name: Unit tests
         run: npm run mocha:test
+
+      - name: Lint
+        run: eslint:check

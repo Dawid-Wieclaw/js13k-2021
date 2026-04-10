@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "mocha:test": "mocha test"
+    "mocha:test": "mocha test",
+    "eslint:check": "npx eslint src/*"
   },
   "repository": {
     "type": "git",

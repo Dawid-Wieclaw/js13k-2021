@@ -20,10 +20,10 @@ jobs:
       - name: Unit tests
         run: | 
           npm run mocha:test
-          echo "::notice::Unit tests ok!" -> $GITHU_STEP_SUMMARY
+          echo "::notice::Unit tests ok!" >> $GITHUB_STEP_SUMMARY
 
       - name: Lint
         run: |
           npm run eslint:check
-          echo "::notice::Lint checkout ok!" -> $GITHUB_STEP_SUMMARY
+          echo "::notice::Lint checkout ok!" >> $GITHUB_STEP_SUMMARY
       

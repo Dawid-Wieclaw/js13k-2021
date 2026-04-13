@@ -340,7 +340,7 @@ export var map0 = (gl, scene, camera) => {
       setTimeout(() => object3d_remove(map, target), 32);
       return target;
     });
-
+  // eslint-disable-next-line no-unused-vars
   var fireShipBullet = () => {
     var bulletGeometry = boxGeom_create(16, 16, 48);
     var bulletMaterial = material_create();
@@ -377,9 +377,13 @@ export var map0 = (gl, scene, camera) => {
 
   var createPhantomEnemy = () => {
     var PHANTOM_STATE_NONE = 0;
+    // eslint-disable-next-line no-unused-vars
     var PHANTOM_STATE_IDLE = 1;
+    // eslint-disable-next-line no-unused-vars
     var PHANTOM_STATE_ALERT = 2;
+    // eslint-disable-next-line no-unused-vars
     var PHANTOM_STATE_SHOOT = 3;
+    // eslint-disable-next-line no-unused-vars
     var PHANTOM_STATE_MELEE = 4;
 
     var PHANTOM_Y = 52;
@@ -529,11 +533,14 @@ export var map0 = (gl, scene, camera) => {
 
     return mesh;
   };
-
+  // eslint-disable-next-line no-unused-vars
   var createScannerEnemy = () => {
     var SCANNER_STATE_NONE = 0;
+    // eslint-disable-next-line no-unused-vars
     var SCANNER_STATE_IDLE = 1;
+    // eslint-disable-next-line no-unused-vars
     var SCANNER_STATE_ALERT = 2;
+    // eslint-disable-next-line no-unused-vars
     var SCANNER_STATE_SHOOT = 2;
 
     var state = SCANNER_STATE_NONE;
@@ -700,13 +707,17 @@ export var map0 = (gl, scene, camera) => {
     var explosion = explosion_create(4);
     Object.assign(explosion.position, position);
     object3d_add(map, explosion);
+    // eslint-disable-next-line no-unused-vars
   };
 
   var bulletInterval = interval_create(0.1);
+  // eslint-disable-next-line no-unused-vars
   var shipBulletInterval = interval_create(5);
-
+  // eslint-disable-next-line no-unused-vars
   var bodies;
+  // eslint-disable-next-line no-unused-vars
   var staticBodies;
+  // eslint-disable-next-line no-unused-vars
   var staticMeshes;
 
   var phantomSpawnInterval = interval_create(7);

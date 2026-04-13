@@ -1,14 +1,14 @@
-name: ci tests
+name: ci/cd
 
 on:
   push:
-    branches: ['**']
+    branches: ["**"]
   pull_request:
     branches: [main]
   workflow_dispatch:
 
 jobs:
-  ci_tests:
+  unit_tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,7 +27,7 @@ jobs:
       
       - name: Install mocha
         run: npm install --save-dev mocha
-        
+
       - name: Unit tests
         run: |
             npm run mocha:test

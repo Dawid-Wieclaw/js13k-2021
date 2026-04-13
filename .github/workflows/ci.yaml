@@ -29,7 +29,12 @@ jobs:
         run: npm install --save-dev mocha
         
       - name: Unit tests
-        run: npm run mocha:test
+        run: |
+            npm run mocha:test
+            echo "Unit tests ok!" >> $GITHUB_STEP_SUMMARY
+
 
       - name: Lint
-        run: npm run eslint:check
+        run: |
+          npm run eslint:check
+          echo "Lint checkout ok!" >> $GITHUB_STEP_SUMMARY

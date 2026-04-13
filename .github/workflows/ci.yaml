@@ -33,12 +33,14 @@ jobs:
       - name: Unit tests
         run: |
             npm run mocha:test
-            echo "Unit tests ok!" >> $GITHUB_STEP_SUMMARY
+            echo "Unit tests ok !" >> $GITHUB_STEP_SUMMARY
 
       - name: Functional tests
-        run: npm run cypress:test
+        run: | 
+            npm run cypress:test
+            echo "Functional tests ok !" >> $GITHUB_STEP_SUMMARY
 
       - name: Lint
         run: |
           npm run eslint:check
-          echo "Lint checkout ok!" >> $GITHUB_STEP_SUMMARY
+          echo "Lint check ok !" >> $GITHUB_STEP_SUMMARY

@@ -17,4 +17,16 @@ describe('Functional Game Logic (Required by Assignment)', () => {
     health = math.clamp(health - damage, 0, 100);
     assert.strictEqual(health, 75, 'Health should be 75 aftr 25 damage');
   });
+
+  it('FT3: Bullet should be at mid-way at point', () => {
+    var strtPoint = 0;
+    var targetPoint = 200;
+
+    var bulletCurrentPos = math.lerp(strtPoint, targetPoint, 0.5);
+    assert.strictEqual(
+      bulletCurrentPos,
+      100,
+      'Bullet must be at 100 units after half travel',
+    );
+  });
 });

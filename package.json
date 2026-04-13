@@ -9,7 +9,10 @@
     "build": "vite build",
     "serve": "vite preview",
     "mocha:test": "mocha test",
-    "eslint:check": "npx eslint src/*"
+    "eslint:check": "npx eslint src/*",
+    "app:serve": "docker compose up",
+    "cypress:run": "npx cypress run",
+    "cypress:test": "start-server-and-test app:serve http://localhost:3000 cypress:run"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,7 @@
   },
   "homepage": "https://github.com/razh/js13k-2021#readme",
   "devDependencies": {
+    "cypress": "15.13.1",
     "del": "6.0.0",
     "escape-string-regexp": "5.0.0",
     "eslint": "7.32.0",
@@ -41,6 +45,7 @@
     "prettier": "2.2.1",
     "roadroller": "2.1.0",
     "rollup": "2.80.0",
+    "start-server-and-test": "3.0.2",
     "through2": "4.0.2",
     "vite": "8.0.8"
   },

@@ -1,24 +1,29 @@
-name: ci tests
+name: ci/cd
 
 on:
   push:
-    branches: ['**']
+    branches: ["**"]
   pull_request:
     branches: [main]
   workflow_dispatch:
 
 jobs:
-  ci_tests:
+  unit_tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      
+
       - name: Install mocha
         run: npm install --save-dev mocha
-        
+
       - name: Unit tests
-        run: npm run mocha:test
+        run: | 
+          npm run mocha:test
+          echo "::notice::Unit tests ok!" -> $GITHU_STEP_SUMMARY
 
       - name: Lint
-        run: npm run eslint:check
+        run: |
+          npm run eslint:check
+          echo "::notice::Lint checkout ok!" -> $GITHUB_STEP_SUMMARY
+      

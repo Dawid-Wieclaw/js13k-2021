@@ -42,3 +42,13 @@ jobs:
         run: |
           npm run eslint:check
           echo "Lint check ok !" >> $GITHUB_STEP_SUMMARY
+
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: lblrs/devops
+          tags: v1, latest
+          registry: registry-url.io
+          dockerfile: Dockerfile.ci
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
